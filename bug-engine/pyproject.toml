@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "bug-engine"
+version = "0.1.0"
+description = ""
+authors = ["relevreal <relevreal@gmail.com>"]
+readme = "README.md"
+packages = [
+    {include = "bug_engine", from = "src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.4"
+
+
+[tool.poetry.group.dev.dependencies]
+matplotlib = "^3.8.2"
+jupyterlab = "^4.0.10"
+ipykernel = "^6.28.0"
+jupyter = "^1.0.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

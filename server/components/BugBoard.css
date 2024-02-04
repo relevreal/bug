@@ -1,0 +1,74 @@
+:host {
+    --hex-size: 0px;
+    /* --hex-margin: calc(var(--hex-size) / 100); */
+    --hex-margin: 0px;
+    --hex-border: 1px;
+    display: block;
+    /* box-sizing: border-box; */
+}
+
+.container {
+    background-color: yellow;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    font-size: 0; /* disable white space between inline block element */
+
+}
+
+.row {
+    display: inline-block;
+    margin: auto;
+}
+  
+bug-hexagon {
+    width: var(--hex-size);
+    height: calc(var(--hex-size) * 1.1547);
+    display: inline-block;
+    font-size: initial; /* we reset the font-size if we want to add some content */
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--hex-margin) - var(--hex-size) * 0.2886);
+    background-color: black;
+}
+
+.inner-hexagon {
+    width: calc(var(--hex-size) - 2 * var(--hex-border));
+    height: calc(var(--hex-size) * 1.1547 - (2 * var(--hex-border)));
+    display: inline-block;
+    font-size: initial; /* we reset the font-size if we want to add some content */
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--hex-margin) - var(--hex-size) * 0.2886);
+    background-color: rgb(31, 179, 39);
+}
+
+.container > .row:last-of-type bug-hexagon {
+    margin-bottom: 0;
+}
+
+bug-hexagon > div:hover {
+    background-color: blue;
+}
+
+.empty {
+    background-color: black;
+}
+
+.allowed {
+    background-color: chocolate;
+}
+
+.last-move {
+    background-color:rgba(0,155,199,.41);
+}
+
+.player {
+    background-color: beige;
+}
+
+.enemy {
+    background-color: red;
+}
+
+.allowed {
+    background-color: blueviolet;
+}

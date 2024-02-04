@@ -1,0 +1,55 @@
+bug-board {
+    --board-size: 5;
+    --hex-size: calc(100% / (2 * var(--board-size) - 1));
+    --hex-margin: 1px;
+    --f: calc(var(--hex-size) * 1.732 + 4 * var(--hex-margin) - 1px);
+
+    display: flex;
+    flex-direction: column;
+    font-size: 0; /* disable white space between inline block element */
+}
+
+bug-board div {
+    display: inline-block;
+    margin: auto;
+}
+  
+bug-hexagon {
+    width: var(--hex-size);
+    margin: var(--hex-margin);
+    height: calc(var(--hex-size) * 1.1547);
+    display: inline-block;
+    font-size: initial; /* we reset the font-size if we want to add some content */
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+    margin-bottom: calc(var(--hex-margin) - var(--hex-size) * 0.2886); */
+    background-color: black;
+}
+
+bug-hexagon:hover {
+    background-color: blue;
+}
+
+bug-hexagon.empty {
+    background-color: black;
+}
+
+bug-hexagon.allowed {
+    background-color: chocolate;
+}
+
+bug-hexagon.last-move {
+    background-color:rgba(0,155,199,.41);
+    margin: 0px;
+}
+
+bug-hexagon.player {
+    background-color: beige;
+}
+
+bug-hexagon.enemy {
+    background-color: red;
+}
+
+bug-hexagon.allowed {
+    background-color: blueviolet;
+}
